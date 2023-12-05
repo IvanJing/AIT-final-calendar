@@ -29,10 +29,6 @@ const Event = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    directlyAdded: {
-        type: Boolean,
-        default: false
-    }
 });
 
 const Day = new mongoose.Schema({

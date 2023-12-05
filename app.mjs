@@ -80,7 +80,7 @@ app.get('/userid', (req, res) => {
     res.type('text').send(userid);
 });
 
-app.get('/main', (req, res) => {
+app.get('/main', isAuthenticated, (req, res) => {
     res.render('main');
 });
 

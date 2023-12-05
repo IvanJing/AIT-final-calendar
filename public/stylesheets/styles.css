@@ -15,6 +15,94 @@ body {
   background-color: #c6e5e7;
 }
 
+#welcomeContainer {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px grey;
+}
+
+#welcomeContainer.h1 {
+  color: #c23d3d;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#authenticationContainer {
+  display: flex;
+  justify-content: center;
+}
+#authenticationContainer a {
+  margin: 0 15px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+#authenticationContainer a:hover {
+  background-color: #555;
+}
+
+#loginContainer {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px grey;
+  margin-top: 60px;
+}
+#loginContainer form {
+  max-width: 300px;
+  margin: auto;
+}
+#loginContainer label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #c23d3d;
+}
+#loginContainer input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#registerContainer {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px grey;
+  margin-top: 60px;
+}
+#registerContainer form {
+  max-width: 300px;
+  margin: auto;
+}
+#registerContainer label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #c23d3d;
+}
+#registerContainer input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 button {
   border-radius: 7px;
   box-shadow: 0px 0px 2px lightgrey;
@@ -203,7 +291,6 @@ When the user clicks on a date, it will display the add event form as well as al
   transition: opacity 0.5s ease-in-out, visibility 0.5s linear;
   top: 45%;
   left: 20%;
-  z-index: 1000;
 }
 #recurringEventPopup.show {
   visibility: visible;
