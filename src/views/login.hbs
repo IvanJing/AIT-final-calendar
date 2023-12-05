@@ -1,0 +1,17 @@
+<body class='flex justify-center'>
+	<form action='/login' method='POST'>
+		<div>
+			<label for='username' >username</label>
+			<input type='text' id='username' name='username' autocomplete='username'
+				required autofocus />
+		</div>
+		<div>
+			<label for='password'>password</label>
+			<input type='password' id='password' name='password' required />
+		</div>
+		{{#if error}}
+			<p>{{error}}</p>
+		{{/if}}
+        <button type='submit'>log in</button>
+	</form>
+</body>

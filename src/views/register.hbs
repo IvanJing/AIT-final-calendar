@@ -1,0 +1,17 @@
+<body class='flex justify-center'>
+	<form action='/register' method='POST'>
+		<div>
+			<label for='username' >username</label>
+			<input type='text' id='username' name='username' autocomplete='username'
+				required autofocus />
+		</div>
+		<div>
+			<label for='password'>password</label>
+			<input type='password' id='password' name='password' required autocomplete="current-password"/>
+		</div>
+		{{#if error}}
+			<p>{{error}}</p>
+		{{/if}}
+        <button type='submit'>Register!</button>
+	</form>
+</body>

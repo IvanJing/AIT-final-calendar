@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="/public/stylesheets/styles.css">
+        <title> Home</title>
+    </head>
+    <body>
+        <div id="eventsContainer">
+            <h1>Recurring Events</h1>
+            <div id="eventsDisplay">
+
+            </div>
+            <button id="addEventButton">Add Event</button>
+            <button id="deleteEventButton">Delete Event</button>
+        </div>
+        <div id="recurringEventPopup">
+            <form action = '/api/events' method = 'POST' id="recurringEventForm">
+                <label for="eventName">📇</label>
+                <input type="text" id="eventName" name="eventName" placeholder="Add Event Name" required>
+
+                <label for="eventDescription">✏️</label>
+                <input type="text" id="eventDescription" name="description" placeholder="Event Description" required>
+
+                <label for="startTime">Start Time</label>
+                <input type="time" id="startTime" name="startTime">
+
+                <label for="endTime">End Time</label>
+                <input type="time" id="endTime" name="endTime">
+
+                <button id="saveEventButton">Save</button>
+            </form>
+        </div>
+        <div id="calendarContainer">
+            <div id="header">
+                <div id="monthDisplay">
+
+                </div>
+                <div id="buttonContainer">
+                    <button id="customizeButton" class = "transparentButton">🎨</button>
+                    <button id="previousButton">←</button>  
+                    <button id="nextButton">→</button>
+                </div>
+            </div>
+
+            <div id = "weekdays">
+                <div>Sunday</div>
+                <div>Monday</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Friday</div>
+                <div>Saturday</div>
+            </div>
+
+            <div id = calendar></div>
+        </div>
+
+        <div id="customizationPopup">
+            <form id="backgroundForm">
+                <label for="wallPaperColor">Choose Wallpaper Color:</label>
+                <input type="color" id="wallPaperColor" name="wallPaperColor" value="#f2f2f2">
+                <label for="calendarColor">Choose Calendar Color:</label>
+                <input type="color" id="calendarColor" name="calendarColor" value="#ffffff">
+                <label for="textColor">Choose Text Color:</label>
+                <input type="color" id="textColor" name="textColor" value="#c23d3d">
+                <button type="button" id="applyBackgroundButton">Apply Background</button>
+            </form>
+        </div>
+
+        <script type = "module" src = "scripts/calendar.mjs"></script>
+    </body>
+</html>
