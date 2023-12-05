@@ -1,5 +1,6 @@
 import express from 'express';
 import {EventModel, DayModel, UserModel} from '../src/database/models.mjs';
+import { setCurrentUser } from '../app.mjs';
 
 const router = express.Router();
 
@@ -29,16 +30,18 @@ router.get('/events/:id', async (req, res) => {
     }
 });
 
-router.post('/events', async (req, res) => {
+router.post('/events', setCurrentUser, async (req, res) => {
+    const user = res.locals.currentUser;
     try{
         const newEvent= new EventModel({
             eventName: req.body.eventName,
             description: req.body.description,
             startTime: req.body.startTime,
-            endTime: req.body.endTime    
+            endTime: req.body.endTime, 
+            user: user._id
         });
         await newEvent.save();
-        res.status(201).json(newEvent);
+        res.redirect('/main');
     } catch(err) {
         console.error(err);
         res.status(500).json({err: 'Internal Server Error'});

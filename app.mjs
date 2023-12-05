@@ -56,6 +56,14 @@ export function isAuthenticated(req, res, next){
     res.redirect('/login');
 }
 
+//Set up middleware to pass current user to api
+export function setCurrentUser(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+  };
+
+  app.use(setCurrentUser);
+
 
 app.get('/', (req, res) => {
     if(req.isAuthenticated()){
@@ -137,4 +145,4 @@ app.listen(process.env.PORT ?? 3000, () => {
     console.log(`Listening on port ${process.env.PORT ?? 3000}`);
 });
 
-export userid;
+
