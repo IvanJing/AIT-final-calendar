@@ -203,6 +203,7 @@ When the user clicks on a date, it will display the add event form as well as al
   transition: opacity 0.5s ease-in-out, visibility 0.5s linear;
   top: 45%;
   left: 20%;
+  z-index: 1000;
 }
 #recurringEventPopup.show {
   visibility: visible;
